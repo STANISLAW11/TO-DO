@@ -7,16 +7,13 @@ from datetime import datetime
 # %M - minuta
 # %S - sekunda
 
-data1 = datetime.strptime("2024-01-01", "%Y-%m-%d")
-data2 = datetime.strptime("01.12.2023", "%d.%m.%Y")
+data_usera1 = input("Podaj date w formacie YYYY-MM-DD: ")
+data_usera2 = input("Podaj date w formacie DD.MM.YYYY: ")
 
-# timestamp - to jest po prostu data w postaci numerku
+data1 = datetime.strptime(data_usera1, "%Y-%m-%d")
+data2 = datetime.strptime(data_usera2, "%d.%m.%Y")
 
-# 2024-01-01 - 1704063600 1704063600.0
-# 01.12.2023 - 1701385200 1701385200.0
-
-print(data1 > data2)
-
-print(int(data1.timestamp()))
-print(data2.timestamp())
-# print(data1.)
+if data1 > data2:
+    print("Data 1 jest pozniejsza")
+else:
+    print("Data 2 jest pozniejsza")
