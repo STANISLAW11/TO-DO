@@ -7,11 +7,11 @@ from datetime import datetime
 # %M - minuta
 # %S - sekunda
 
-data_usera1 = input("Podaj date w formacie YYYY-MM-DD: ")
-data_usera2 = input("Podaj date w formacie DD.MM.YYYY: ")
+data_usera1 = input("Podaj date w formacie M;D;Y: ")
+data_usera2 = input("Podaj date w formacie Y.D.M: ")
 
-data1 = datetime.strptime(data_usera1, "%Y-%m-%d")
-data2 = datetime.strptime(data_usera2, "%d.%m.%Y")
+data1 = datetime.strptime(data_usera1, "%m;%d;%Y")
+data2 = datetime.strptime(data_usera2, "%Y.%d.%m")
 
 if data1 > data2:
     print("Data 1 jest pozniejsza")
