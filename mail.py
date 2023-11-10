@@ -76,7 +76,7 @@ def wszystkiezad_poterminie(zaznacz_zrobione):
 #print(lista_zadan[0]['datawykonania']<data5)
 
 def operowanie_menu():
-    operator = True
+    operator = None
     try:
         operator = int(input("Co chcesz zrobic?"))
     except Exception:
