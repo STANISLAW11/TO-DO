@@ -16,16 +16,19 @@ print("""MENU
 1 - Wcisnij 1 aby dodac zadanie!
 2 - Wcisnij aby zobaczyc swoje zadania!
 3 - Wcsnij aby oznaczc zadania jako zrobione lub niezrpbione!
-4 - Sprawdz czy zadania sa po terminie
-5 - Wyswietl wszystkie zadania po terminie
+4 - Sprawdz czy zadania sa po terminie!
+5 - Wyswietl wszystkie zadania po terminie!
       """)
 def  add_a_task():
   #  zad = input("Tu wpisz zadanie jakie masz wykonac")
     zad = input("Tu wpisz zadanie jakie masz wykonac\n")  
     data_user1 = input("Podaj date wykonania zadania (DZIEN.MIESIAC.ROK): ")
-    data1 = datetime.strptime(data_user1, "%d.%m.%Y")
-    slownik_czyzrobione = {'tresc_zadania' : zad, 'czyzrobione' : False, 'datawykonania': data1 }
-    lista_zadan.append(slownik_czyzrobione)
+    try:
+        data1 = datetime.strptime(data_user1, "%d.%m.%Y")
+        slownik_czyzrobione = {'tresc_zadania' : zad, 'czyzrobione' : False, 'datawykonania': data1 }
+        lista_zadan.append(slownik_czyzrobione)
+    except Exception:
+        print("Musza pojaiwc sie liczby w ukladzie: DZIEN.MIESIAC.ROK")
 
 def zaznacz_zrobione():
     ktorezad =  int(input("Ktore zasadanie chcesz oznaczyc?"))
