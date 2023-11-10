@@ -15,7 +15,7 @@ niezrobione = []
 print("""MENU
 1 - Wcisnij 1 aby dodac zadanie!
 2 - Wcisnij aby zobaczyc swoje zadania!
-3 - Wcsnij aby oznaczc zadania jako zrobione lub niezrpbione!
+3 - Wcsnij aby oznaczc zadania jako zrobione lub niezrobione!
 4 - Sprawdz czy zadania sa po terminie!
 5 - Wyswietl wszystkie zadania po terminie!
       """)
@@ -31,13 +31,16 @@ def  add_a_task():
         print("Musza pojaiwc sie liczby w ukladzie: DZIEN.MIESIAC.ROK")
 
 def zaznacz_zrobione():
-    ktorezad =  int(input("Ktore zasadanie chcesz oznaczyc?"))
+    try:
+        ktorezad =  int(input("Ktore zadanie chcesz oznaczyc?"))
+        zadanie = lista_zadan[ktorezad-1]
+        zadanie['czyzrobione'] = True
+        print("done")
+    except Exception:
+        print("Musisz oznaczyc jedno z podanych do tej pory zadan.")
+
   #  input("wpisz True jesli jest ono zrobione i false jesli nie. ")
-    zadanie = lista_zadan[ktorezad-1]
-    zadanie['czyzrobione'] = True
   #  print(zadanie)
-    print("done")
-    
 def pokaz_zadan():
     if lista_zadan == []:
         print("Nie dodałeś jeszcze zadnego zadania do swojej listy, kliknij 1, aby to zmienić.")
