@@ -61,13 +61,14 @@ def zadania_poterminie():
         seconds = seconds % 60
         print(f"Masz jeszcze {hours} godzin,{minutes} minut,{seconds} sekund czasu na wykonanie zadania")
 
-def wszystkiezad_poterminie():
+def wszystkiezad_poterminie(zaznacz_zrobione):
     #zadania_poterminie()
     #range zwraca od 0 
-    print('Zadania po terminie:')
-    for index in range(len(lista_zadan)):
-        data1 = lista_zadan[index]['datawykonania']
-        data2 = datetime.now()
+    if zaznacz_zrobione == False:
+        print('Zadania po terminie:')
+        for index in range(len(lista_zadan)):
+            data1 = lista_zadan[index]['datawykonania']
+            data2 = datetime.now()
         if data1<data2:
             print(lista_zadan[index]['tresc_zadania'])
 
@@ -75,7 +76,11 @@ def wszystkiezad_poterminie():
 #print(lista_zadan[0]['datawykonania']<data5)
 
 def operowanie_menu():
-    operator = int(input("Co chcesz zrobic?"))
+    operator = True
+    try:
+        operator = int(input("Co chcesz zrobic?"))
+    except Exception:
+        print("Musza pojawic sie cyfry od 1 do 5, a litery i znaki specjalne nie sa dopuszczane!")
     if operator == 1:
         add_a_task()
     if operator == 2:
@@ -86,14 +91,13 @@ def operowanie_menu():
     if operator == 4:
         zadania_poterminie()
     if operator == 5:
-        wszystkiezad_poterminie()
-
-   
+        wszystkiezad_poterminie(zaznacz_zrobione=False)
 
 while True:
     operowanie_menu()
 
 #praca domowa - dodaj status czyzrobione zadania jak jesty falsz dodac niezrobione a jak prawda dodaac niezrobione 
+
 
 # dokonczyc poniedzialek zadanie zamiast daty
 # 5 opcja wyswwietlenie wszystkich zadan po terminie zrobic to z uzyciem petli for
