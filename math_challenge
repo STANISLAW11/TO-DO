@@ -1,7 +1,7 @@
 import random
 import time
 mnozenie = '*'
-dzielenie = ':'
+dzielenie = '/'
 dodawanie = '+'
 odejmowanie = '-'
 lista_znakow = [mnozenie , dzielenie , dodawanie , odejmowanie]
@@ -10,7 +10,11 @@ if enter == '':
     for problem in range(10):
         dzialanie = f"{random.randint(1,10)} {random.choice(lista_znakow)} {random.randint(1,10)}"
         wynik = eval(dzialanie)
-        odp_uzytkownika = int(input(f"PROBLEM: = {dzialanie} = "))
+
+        try:
+            odp_uzytkownika = int(input(f"PROBLEM: = {dzialanie} = "))
+        except Exception:
+            print("Wrong aswer, try one more time.")
         while wynik != odp_uzytkownika: 
             try:
                 odp_uzytkownika = int(input(f"PROBLEM: = {dzialanie}"))
