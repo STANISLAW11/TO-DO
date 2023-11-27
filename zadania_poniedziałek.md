@@ -59,3 +59,15 @@ Opracuj prosty kalkulator, który może wykonywać dodawanie, odejmowanie, mnoż
 
 **Przykład:**
 Użytkownik wprowadza liczby 5 i 3, a program wykonuje dodawanie: 5 + 3 = 8.
+
+## 11. Sprawdź Palindromy w Liście:
+Stwórz program, który przyjmuje listę słów i sprawdza, które z nich są palindromami.
+
+np. podaj 1 słowo
+    podaj 2 slowo
+    podaj 3 slowo
+
+i potem wypisuje 
+    1 - palindrom
+    2 - nie palindrom
+    3 - palindrom
